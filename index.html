@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام حجز المواعيد</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>نظام حجز المواعيد</h1>
+            <p>احجز موعدك بسهولة وسرعة</p>
+        </header>
+        
+        <section class="booking-form">
+            <h2>احجز موعدك الآن</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="service">اختر الخدمة:</label>
+                    <select id="service" required>
+                        <option value="">-- اختر الخدمة --</option>
+                        <option value="استشارة طبية">استشارة طبية</option>
+                        <option value="حجز فندق">حجز فندق</option>
+                        <option value="حجز مطعم">حجز مطعم</option>
+                        <option value="صيانة سيارات">صيانة سيارات</option>
+                        <option value="جلسة تدريب">جلسة تدريب</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">اختر التاريخ:</label>
+                    <input type="date" id="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="time">اختر الوقت:</label>
+                    <select id="time" required>
+                        <option value="">-- اختر الوقت --</option>
+                        <option value="09:00">09:00 صباحاً</option>
+                        <option value="10:00">10:00 صباحاً</option>
+                        <option value="11:00">11:00 صباحاً</option>
+                        <option value="12:00">12:00 ظهراً</option>
+                        <option value="13:00">01:00 ظهراً</option>
+                        <option value="14:00">02:00 عصراً</option>
+                        <option value="15:00">03:00 عصراً</option>
+                        <option value="16:00">04:00 عصراً</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" required placeholder="أدخل رقم هاتفك">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني (اختياري)">
+                </div>
+                
+                <button type="submit">احجز الموعد</button>
+            </form>
+        </section>
+        
+        <section class="confirmation" id="confirmationSection">
+            <div class="success-icon">✓</div>
+            <h2>تم حجز الموعد بنجاح!</h2>
+            <p>شكراً لك، تم تأكيد حجز موعدك بنجاح.</p>
+            
+            <div class="booking-details" id="bookingDetails">
+            </div>
+            
+            <p>سيتم إرسال رسالة تأكيد إلى هاتفك المحمول.</p>
+            <button onclick="resetForm()">حجز موعد جديد</button>
+        </section>
+        
+        <section class="bookings-list" id="bookingsList">
+            <h2>حجوزاتي</h2>
+            <div id="bookingsContainer">
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
